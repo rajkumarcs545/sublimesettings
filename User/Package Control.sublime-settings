@@ -1,0 +1,43 @@
+{
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"1337 Color Scheme",
+		"Anaconda",
+		"BeautifyRuby",
+		"BracketHighlighter",
+		"CTags",
+		"DocBlockr",
+		"Emmet",
+		"Git",
+		"GitGutter",
+		"HTML-CSS-JS Prettify",
+		"HTML5",
+		"Http Requester",
+		"HyperlinkHelper",
+		"Indent and braces",
+		"JavaScript Snippets",
+		"JsFormat",
+		"Node Completions",
+		"Oceanic Color Scheme",
+		"Package Control",
+		"Package Syncing",
+		"Python 3",
+		"RESTer HTTP Client",
+		"Ruby on Rails snippets",
+		"RubyTest",
+		"SideBarEnhancements",
+		"SublimeCodeIntel",
+		"SublimeLinter",
+		"SublimeLinter-html-tidy",
+		"SublimeLinter-jshint",
+		"SublimeLinter-ruby",
+		"SublimeREPL",
+		"Sublimerge Pro",
+		"Tag",
+		"Theme - Soda",
+		"Theme - Spacegray"
+	]
+}

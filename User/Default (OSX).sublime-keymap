@@ -1,0 +1,19 @@
+[
+{ "keys": ["super+i"], "command": "copy_path" },
+{ "keys": ["ctrl+shift+r"], "command": "reindent" , "args": { "single_line": false } },
+{ "keys": ["shift+ctrl+space"], "command": "code_intel_auto_complete" },
+{ "keys": ["shift+ctrl+d"], "command": "goto_python_definition"},
+{ "keys": ["shift+ctrl+b"], "command": "back_to_python_definition"},
+{ "keys": ["ctrl+r"], "command": "goto_definition" },
+{ "keys": ["super+alt+down"], "command": "goto_definition" },
+{ "keys": ["super+shift+r"], "command": "goto_symbol_in_project" },
+{ "keys": ["ctrl+minus"], "command": "jump_back" },
+{ "keys": ["ctrl+shift+minus"], "command": "jump_forward" },
+{ "keys": ["ctrl+pagedown"], "command": "next_view_in_stack" },
+{ "keys": ["ctrl+pageup"], "command": "prev_view_in_stack" },
+{ "keys": ["ctrl+tab"], "command": "next_view" },
+{ "keys": ["ctrl+shift+tab"], "command": "prev_view" },
+{ "keys": ["ctrl+alt+f"], "command": "code_formatter"}
+
+
+]

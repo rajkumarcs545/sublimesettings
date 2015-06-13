@@ -1,0 +1,8 @@
+{
+
+  "cmd": ["bundle exec", "ruby", "$file_name"],
+  "path": "/Users/kumar/.rbenv/shims/",
+  // "selector": "source.js",
+
+}
+// #!/usr/bin/env 

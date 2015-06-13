@@ -1,0 +1,5 @@
+{
+    "cmd": ["node", "debug", "$file_name"],
+    "selector": ["source.js"],
+    "path": "/usr/local/bin",
+}

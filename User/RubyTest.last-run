@@ -1,0 +1,4 @@
+{
+	"last_test_run": "erb -xT - index.html.erb | ruby -c",
+	"last_test_working_dir": "/Users/kumar/code/rail_code/sample/app/views/welcome"
+}
