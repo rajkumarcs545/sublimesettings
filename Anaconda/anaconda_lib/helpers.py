@@ -33,6 +33,16 @@ LINTING_ENABLED = 0x04
 ENVIRON_HOOK_INVALID = defaultdict(lambda: False)
 
 
+def completion_is_disabled(view):
+    """Determine if the anaconda completion is disabled or not
+    """
+
+    if view is None:
+        return False
+
+    return get_settings(view, "disable_anaconda_completion", False)
+
+
 def is_code(view, lang='python', ignore_comments=False, ignore_repl=False):
     """Determine if the given view location is `lang` code
     """
@@ -300,7 +310,7 @@ def valid_languages(**kwargs):
     """Return back valid languages for anaconda plugins
     """
 
-    path = os.path.join(os.path.dirname(__file__), '../../')
+    path = os.path.join(os.path.dirname(__file__), os.pardir, os.pardir)
     languages = [
         f.rsplit('_', 1)[1].lower() for f in os.listdir(path)
         if f.startswith('anaconda_') and 'vagrant' not in f

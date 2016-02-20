@@ -5,5 +5,8 @@
     "file_patterns": ["\\.html\\.erb", "\\.rb", "\\.rake", "Rakefile", "Gemfile", "Vagrantfile"],
     "html_erb_patterns": ["\\.html\\.erb"],
     "run_on_save": false,
-    "save_on_beautify": false
+    "save_on_beautify": false,
+    "ruby": "/Users/kumar.raja/.rbenv/shims/ruby",
+    "translate_tabs_to_spaces": true,
+    "tab_size": 2
 }

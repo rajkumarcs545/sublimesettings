@@ -14,7 +14,7 @@
     // built automatically using the values below. For example:
     //   GOOD: "command": "/usr/bin/ctags"
     //   BAD:  "command": "ctags -R -f .tags --exclude=some/path"
-    "command": "/usr/local/bin/ctags -R -f .tags",
+    "command": "/usr/local/bin/ctags_for_ruby",
     // "command": "/usr/local/bin/ctags_for_ruby",
 
     // Set to false to disable recursive search for ctag generation. This

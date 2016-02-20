@@ -1,10 +1,12 @@
 {
+	"bootstrapped": true,
 	"in_process_packages":
 	[
 	],
 	"installed_packages":
 	[
 		"1337 Color Scheme",
+		"Alignment",
 		"Anaconda",
 		"BeautifyRuby",
 		"BracketHighlighter",
@@ -19,6 +21,7 @@
 		"HyperlinkHelper",
 		"Indent and braces",
 		"JavaScript Snippets",
+		"Javatar",
 		"JsFormat",
 		"Node Completions",
 		"Oceanic Color Scheme",

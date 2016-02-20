@@ -48,10 +48,13 @@ class TestMethodMatcher(object):
         """Try to find the test path, returns None if can't be found
         """
 
-        test_method = self.find_test_method(test_file_content)
-        if test_method is not None:
-            test_class = self.find_test_class(test_file_content)
-            return delimeter + test_class + "." + test_method
+        test_class_pos = self.find_test_class(test_file_content)
+        if test_class_pos is not None:
+            test_class, pos = test_class_pos
+            test_method = self.find_test_method(test_file_content[pos:])
+            if test_method is not None:
+                return delimeter + test_class + "." + test_method
+            return delimeter + test_class
 
     def find_test_method(self, test_file_content):
         """Try to find the test method, returns None if can't be found
@@ -66,11 +69,14 @@ class TestMethodMatcher(object):
         """Try to find the test class, return None if can't be found
         """
 
-        match_classes = re.findall(r'\s?class\s+(\w+)\s?\(', test_file_content)
+        match_classes = [
+            (m.group(1), m.end()) for m in
+                re.finditer(r'\s?class\s+(\w+)\s?\(', test_file_content)]
         if match_classes:
             try:
                 return [
-                    c for c in match_classes if "Test" in c or "test" in c][-1]
+                    (c, p) for (c, p) in
+                        match_classes if "Test" in c or "test" in c][-1]
             except IndexError:
                 return match_classes[-1]
 
@@ -127,7 +133,7 @@ class AnacondaRunTestsBase(sublime_plugin.TextCommand):
         """
 
         real_path = os.path.relpath(
-            self.view.file_name(), self.test_root).replace('/', '.')
+            self.view.file_name(), self.test_root).replace(os.sep, '.')
         print(real_path)
         if real_path is not None:
             return real_path[:-3]
@@ -158,6 +164,10 @@ class AnacondaRunTestsBase(sublime_plugin.TextCommand):
         self._save_test_run(command)
 
     def _load_settings(self):
+        sep = ";"
+        if os.name == "nt":
+            sep = "&"
+
         gs = get_settings
         self.test_root = gs(
             self.view, 'test_root', self.view.window().folders()[0]
@@ -165,10 +175,10 @@ class AnacondaRunTestsBase(sublime_plugin.TextCommand):
         self.test_command = gs(self.view, 'test_command', DEFAULT_TEST_COMMAND)
         self.before_test = gs(self.view, 'test_before_command')
         if type(self.before_test) is list:
-            self.before_test = ';'.join(self.before_test)
+            self.before_test = sep.join(self.before_test)
         self.after_test = gs(self.view, 'test_after_command')
         if type(self.after_test) is list:
-            self.after_test = ';'.join(self.after_test)
+            self.after_test = sep.join(self.after_test)
         self.test_delimeter = gs(self.view, 'test_delimeter', TEST_DELIMETER)
         self.output_show_color = gs(self.view, 'test_output_show_color', True)
 
